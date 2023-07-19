@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>DISPLAY DATA</title>
+</head>
+
+<body>
+
+    <hr>
+    <h1>Student Enrollement Form</h1>
+    <hr>
+    <div class="parent">
+        <div class="child1">
+            Name: <input type="text" id="name"><br>
+            Email: <input type="email" id="email"><br>
+            Website: <input type="url" id="website"><br>
+            Gender: <input type="checkbox" id="male"> Male
+            <input type="checkbox" id="female"> Female <br>
+            Skill: <input type="checkbox" id="react"> React
+            <input type="checkbox" id="angular"> Angular
+            <input type="checkbox" id="vue"> Vue <br>
+            <button onclick="names(),emails(),websites(),genders(),skills()">Enroll Student</button>
+        </div>
+        <div class="child2">
+            <h2>Enrolled Student</h2>
+            <p id="result1"></p>
+            <p id="result2"></p>
+            <p id="result3"></p>
+            <p id="result4"></p>
+            <p id="result5"></p>
+            <p id="result6"></p>
+        </div>
+    </div>
+
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>
+
