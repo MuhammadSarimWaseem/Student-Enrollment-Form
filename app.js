@@ -1,58 +1,57 @@
-function names() {
+function enrollStudent() {
   var name = document.getElementById("name").value;
-  var result1 = document.getElementById("result1");
-  result1.innerHTML = name;
-}
-
-function emails() {
   var email = document.getElementById("email").value;
-  var result2 = document.getElementById("result2");
-  result2.innerHTML = email;
-}
-
-function websites() {
   var website = document.getElementById("website").value;
-  var result3 = document.getElementById("result3");
-  result3.innerHTML = website;
-}
 
-function genders() {
+  var gender;
   var male = document.getElementById("male");
   var female = document.getElementById("female");
-  var result4 = document.getElementById("result4");
-  var result6 = document.getElementById("result6");
-  if (male.checked == true) {
-    result4.innerHTML = "Male";
-    result6.innerHTML = '<img src="https://onlinemrp.dgip.gov.pk/photoCheck/blank.jpg" />';
-
-  } else if (female.checked == true) {
-    result4.innerHTML = "Female";
-    result6.innerHTML = '<img src="https://t4.ftcdn.net/jpg/01/40/46/19/360_F_140461947_tWo9D0W8QQnrhzhCXJbDHIXblMV9BTZv.jpg" />';
-
+  if (male.checked) {
+    gender = "Male";
+  } else if (female.checked) {
+    gender = "Female";
+  } else {
+    gender = "";
   }
+
+  var skills = [];
+  var react = document.getElementById("react");
+  var angular = document.getElementById("angular");
+  var vue = document.getElementById("vue");
+  if (react.checked) {
+    skills.push("React");
+  }
+  if (angular.checked) {
+    skills.push("Angular");
+  }
+  if (vue.checked) {
+    skills.push("Vue");
+  }
+
+  displayEnrolledStudent(name, email, website, gender, skills);
 }
 
-function skills() {
-  var react = document.getElementById("react").checked;
-  var angular = document.getElementById("angular").checked;
-  var vue = document.getElementById("vue").checked;
-  var result5 = document.getElementById("result5");
+function displayEnrolledStudent(name, email, website, gender, skills) {
+  var resultName = document.getElementById("result-name");
+  var resultEmail = document.getElementById("result-email");
+  var resultWebsite = document.getElementById("result-website");
+  var resultGender = document.getElementById("result-gender");
+  var resultSkills = document.getElementById("result-skills");
+  var resultImage = document.getElementById("result-image");
 
-  if (react && !angular && !vue) {
-    result5.innerHTML = "React";
-  } else if (!react && angular && !vue) {
-    result5.innerHTML = "Angular";
-  } else if (!react && !angular && vue) {
-    result5.innerHTML = "Vue";
-  } else if (react && angular && !vue) {
-    result5.innerHTML = "React, Angular";
-  } else if (!react && angular && vue) {
-    result5.innerHTML = "Angular, Vue";
-  } else if (react && !angular && vue) {
-    result5.innerHTML = "React, Vue";
-  } else if (react && angular && vue) {
-    result5.innerHTML = "React, Angular, Vue";
+  resultName.textContent = name;
+  resultEmail.textContent = email;
+  resultWebsite.textContent = website;
+  resultGender.textContent = gender;
+  resultSkills.textContent = skills.join(", ");
+
+  if (gender === "Male") {
+    resultImage.innerHTML =
+      '<img src="https://onlinemrp.dgip.gov.pk/photoCheck/blank.jpg" alt="Male Image" />';
+  } else if (gender === "Female") {
+    resultImage.innerHTML =
+      '<img src="https://t4.ftcdn.net/jpg/01/40/46/19/360_F_140461947_tWo9D0W8QQnrhzhCXJbDHIXblMV9BTZv.jpg" alt="Female Image" />';
   } else {
-    result5.innerHTML = "";
+    resultImage.innerHTML = "";
   }
 }

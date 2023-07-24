@@ -9,37 +9,51 @@
 </head>
 
 <body>
-
-    <hr>
-    <h1>Student Enrollement Form</h1>
-    <hr>
-    <div class="parent">
-        <div class="child1">
-            Name: <input type="text" id="name"><br>
-            Email: <input type="email" id="email"><br>
-            Website: <input type="url" id="website"><br>
-            Gender: <input type="checkbox" id="male"> Male
-            <input type="checkbox" id="female"> Female <br>
-            Skill: <input type="checkbox" id="react"> React
-            <input type="checkbox" id="angular"> Angular
-            <input type="checkbox" id="vue"> Vue <br>
-            <button onclick="names(),emails(),websites(),genders(),skills()">Enroll Student</button>
+    <div class="container">
+        <div class="form">
+            <h1>Student Enrollment Form</h1>
+            <div class="input-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name">
+            </div>
+            <div class="input-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email">
+            </div>
+            <div class="input-group">
+                <label for="website">Website:</label>
+                <input type="url" id="website">
+            </div>
+            <div class="input-group">
+                <label>Gender:</label>
+                <input type="radio" name="gender" id="male" value="Male">
+                <label for="male">Male</label>
+                <input type="radio" name="gender" id="female" value="Female">
+                <label for="female">Female</label>
+            </div>
+            <div class="input-group">
+                <label>Skills:</label>
+                <input type="checkbox" id="react">
+                <label for="react">React</label>
+                <input type="checkbox" id="angular">
+                <label for="angular">Angular</label>
+                <input type="checkbox" id="vue">
+                <label for="vue">Vue</label>
+            </div>
+            <button onclick="enrollStudent()">Enroll Student</button>
         </div>
-        <div class="child2">
+        <div class="enrolled-student">
             <h2>Enrolled Student</h2>
-            <p id="result1"></p>
-            <p id="result2"></p>
-            <p id="result3"></p>
-            <p id="result4"></p>
-            <p id="result5"></p>
-            <p id="result6"></p>
+            <p><strong>Name:</strong> <span id="result-name"></span></p>
+            <p><strong>Email:</strong> <span id="result-email"></span></p>
+            <p><strong>Website:</strong> <span id="result-website"></span></p>
+            <p><strong>Gender:</strong> <span id="result-gender"></span></p>
+            <p><strong>Skills:</strong> <span id="result-skills"></span></p>
+            <div id="result-image"></div>
         </div>
     </div>
 
-
     <script src="app.js"></script>
-
 </body>
 
 </html>
-
